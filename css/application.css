@@ -5606,7 +5606,7 @@ body.menu-active .modal-backdrop {
   padding-right: 470px;
 }
 .section--realtime .welcome-bg--screenshot {
-  filter: brightness(0.75) contrast(1) sepia(0.7) hue-rotate(-5deg) saturate(3.5);
+ 
   left: 50%;
   margin-left: 40px;
 }
@@ -5620,7 +5620,7 @@ body.menu-active .modal-backdrop {
   padding-left: 470px;
 }
 .section--github .welcome-bg--screenshot {
-  filter: brightness(0.7) contrast(1) sepia(1) hue-rotate(115deg) saturate(1.5);
+ 
 }
 .section--github .welcome-button {
   background-color: #61efce;
@@ -5660,7 +5660,7 @@ body.menu-active .modal-backdrop {
 }
 
 .section--contact {
-  background-color: #2c2a2b;
+  background-color: #343233;
   background-image: url("/assets/images/index-rocket.svg");
   background-position: calc(50% + 380px) 60px;
   background-repeat: no-repeat;
