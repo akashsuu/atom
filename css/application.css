@@ -1443,7 +1443,7 @@ p.explain .minibutton {
   font-size: 1em;
 }
 .markdown-body h6 {
-  color: #777;
+  color: #d26565;
   font-size: 1em;
 }
 .markdown-body p,
@@ -3910,7 +3910,7 @@ hr {
   margin-top: 3px;
 }
 .search-page .search-results-header em {
-  color: #66595c;
+  color: #df5877;
   font-weight: bold;
 }
 .search-page .try-other-search-message {
@@ -5052,7 +5052,7 @@ input.search-input {
   display: table-cell;
 }
 .select-menu-item.select-menu-action, .select-menu-item.selected {
-  color: #333;
+  color: #c26b6b;
 }
 .select-menu-item.select-menu-action .description, .select-menu-item.selected .description {
   color: #666;
@@ -5261,9 +5261,9 @@ body.menu-active .modal-backdrop {
   margin: 0;
 }
 .user-show .count {
-  background-color: #eee;
+  background-color: #bc1515;
   border-radius: 3px;
-  color: #a29f99;
+  color: #d0a349;
   font-size: 18px;
   font-weight: normal;
   padding: 2px 5px;
@@ -5272,7 +5272,7 @@ body.menu-active .modal-backdrop {
 }
 
 .welcome {
-  background-color: #343233;
+  background-color: #161E31;      /*middlepage*/
   color: #efdab9;
   font: 16px/1.5 normal normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -5323,7 +5323,7 @@ body.menu-active .modal-backdrop {
   padding-top: 200px;
 }
 .welcome .wrapper strong {
-  background-color: #393c3c;
+  background-color: #3bb0b0;
   color: #98c3b7;
   font-weight: 500;
   padding: 0 0.2em;
@@ -5408,7 +5408,7 @@ body.menu-active .modal-backdrop {
 }
 
 .section--hero {
-  background-image: radial-gradient(ellipse closest-side at 50% 50%, #3a3f45, #37383c 25%, #343233);
+  background-image: radial-gradient(ellipse closest-side at 50% 50%, #161E31, #161E31 25%, #161E31);              /*upperpage*/
   background-position: center -120px;
   background-repeat: no-repeat;
   background-size: 100% 1000px;
@@ -5419,7 +5419,7 @@ body.menu-active .modal-backdrop {
   padding-top: 133.3333px;
 }
 .section--hero a {
-  color: #8e8373;
+  color: #bb2525;
   font-size: 0.9em;
 }
 
@@ -5526,7 +5526,7 @@ body.menu-active .modal-backdrop {
   padding: 1em;
 }
 .hero-download li + li {
-  border-left: 1px solid #4e4b4d;
+  border-left: 1px solid #964079;
 }
 .hero-download .logo-wordmark {
   display: block;
@@ -5545,7 +5545,7 @@ body.menu-active .modal-backdrop {
   line-height: 2rem;
 }
 .hero-download .support {
-  color: #8e8373;
+  color: #b86fa5;
   display: block;
   font-size: 0.9em;
 }
@@ -5570,7 +5570,7 @@ body.menu-active .modal-backdrop {
 }
 
 .hero-tos {
-  color: #786f63;
+  color: #9f5b8d;
   display: block;
   font-size: 0.8em;
   margin-bottom: 2em;
@@ -5643,9 +5643,9 @@ body.menu-active .modal-backdrop {
   position: relative;
 }
 .section--features .features-item .mega-octicon {
-  background-color: #3d3a3a;
+  background-color: #3d3a3a;  /*webicon*/
   border-radius: 6px;
-  color: #efdab9;
+  color: #efdab9;      /*inicon*/
   font-size: 24px;
   height: 1.75em;
   left: 0;
@@ -5660,7 +5660,7 @@ body.menu-active .modal-backdrop {
 }
 
 .section--contact {
-  background-color: #343233;
+  background-color: #161E31;       /*footerpage*/
   background-image: url("/assets/images/index-rocket.svg");
   background-position: calc(50% + 380px) 60px;
   background-repeat: no-repeat;
@@ -5692,7 +5692,7 @@ body.menu-active .modal-backdrop {
   }
   .hero-download li + li {
     border-left: none;
-    border-top: 1px solid #4e4b4d;
+    border-top: 1px solid #d54da8;
   }
   .hero-meta {
     flex: 1;
