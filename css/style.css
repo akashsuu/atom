@@ -12,13 +12,6 @@ label {
   opacity: 0.2;
 }
 dl.form.errored .error {
-  color: #900;
-  display: inline;
-}
-dl.form.errored dd.error,
-dl.form.errored dd.warning {
-  background: #f7ea57;
-  border: 1px solid #c0b536;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-top-color: #fff;
