@@ -13,13 +13,6 @@ label {
 .form-cards > .car
   }
 }
-dl.form .success,
-dl.form .error,
-dl.form .indicator {
-  display: none;
-  font-size: 12px;
-  font-weight: bold;
-}
 dl.form.loading {
   opacity: 0.5;
 }
