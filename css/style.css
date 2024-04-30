@@ -120,10 +120,7 @@ dl.form.flattened > dt {
 dl.form.flattened > dd {
   line-height: 32px;
 }
-dl.form > dd input[type=text],
-dl.form > dd input[type=password],
-dl.form > dd input[type=email] {
-  background-position-x: 98%;
+
   margin-right: 5px;
   max-width: 100%;
   width: 440px;
