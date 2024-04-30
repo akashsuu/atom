@@ -31,13 +31,7 @@ input[type=text] .focused .drag-and-drop,
 .focused input[type=text] .drag-and-drop,
 
 
-input[type=url]:focus,
-input[type=search] .focused .drag-and-drop,
-.focused input[type=search] .drag-and-drop,
-input[type=search].focus,
-input[type=search]:focus,
-textarea .focused .drag-and-drop,
-.focused textarea .drag-and-drop,
+
 textarea.focus,
 textarea:focus {
   border-color: #51a7e8;
