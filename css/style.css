@@ -85,10 +85,7 @@ input.input-large {
 dl.form {
   margin: 15px 0;
 }
-dl.form input[type=text],
-dl.form input[type=password],
-dl.form input[type=email],
-dl.form textarea {
+
   background-color: #fafafa;
 }
 
