@@ -8,16 +8,6 @@ fieldset {
 label {
   font-size: 13px;
   font-weight: b
-    
-  margin: 4px 0 0;
-}
-dl.form > dd h4.is-error {
-  color: #bd2c00;
-}
-dl.form > dd h4.is-success {
-  color: #6cc644;
-}
-dl.form > dd h4 + p.note {
   margin-top: 0;
 }
 dl.form.required > dt > label::after {
