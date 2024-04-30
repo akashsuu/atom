@@ -11,13 +11,7 @@ label {
 }
 
 #adv_code_search .search-page-label,
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number],
-input[type=tel],
-input[type=url],
-input[type=search],
+
 textarea {
   background-color: #fff;
   background-position: right center;
