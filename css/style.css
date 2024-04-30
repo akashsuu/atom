@@ -15,11 +15,6 @@ label {
 }
 }
 
-input.input-large {
-  font-size: 16px;
-  padding: 6px 10px;
-}
-
 .input-block {
   display: block;
   width: 100%;
