@@ -116,9 +116,7 @@ dl.form > dd input[type=email].is-autocheck-successful {
   background-image: url("/images/modules/ajax/success.png");
 }
 
-dl.form > dd input[type=email].is-autocheck-errored {
-  background-image: url("/images/modules/ajax/error.png");
-}
+
 dl.form > dd textarea {
   height: 200px;
   min-height: 200px;
