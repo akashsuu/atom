@@ -10,16 +10,7 @@ label {
 }
 .form-cards .card.disabled {
   opacity: 0.2;
-.form-cards > .cards > li.text {
-  color: #999;
-  font-size: 11px;
-  line-height: 31px;
-}
-
-@media only screen and (resolution >= 2dppx) {
-  .form-cards > .cards .card {
-    background-image: url("/images/modules/pricing/credit-cards-@2x.png");
-    background-size: 300px 31px;
+.form-cards > .car
   }
 }
 dl.form .success,
