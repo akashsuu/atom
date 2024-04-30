@@ -3654,7 +3654,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #7169dd; **//jjk//* big text colour*/
+  color: #5f82f7; **//jjk//* big text colour*/
 }
 h1.center,
 h2.center,
@@ -5273,14 +5273,13 @@ body.menu-active .modal-backdrop {
 
 .welcome {
   background-color: #111111;      /*middlepage*/
-  color: #95FBf2;
+  color: #bdccff;
   font: 16px/1.5 normal normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
 }
 .welcome h1,
 .welcome h2,
-.welcome h4,
 .welcome h5,
 .welcome h6 {
   color: inherit;
