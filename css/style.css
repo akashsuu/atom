@@ -10,15 +10,6 @@ label {
 }
 .form-cards .card.disabled {
   opacity: 0.2;
-}
-.form-cards > .cards {
-  margin: 0;
-}
-.form-cards > .cards > li {
-  float: left;
-  list-style-type: none;
-  margin: 0 4px 0 0;
-}
 .form-cards > .cards > li.text {
   color: #999;
   font-size: 11px;
