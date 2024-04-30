@@ -13,13 +13,6 @@ label {
   font-size: 12px;
   font-weight: normal;
   margin: 0;
-}
-
-.form-cards {
-  height: 31px;
-  margin: 0 0 15px;
-}
-.form-cards .card {
   background-image: url("/images/modules/pricing/credit-cards-@1x.png");
   background-position: 0 0;
   float: left;
