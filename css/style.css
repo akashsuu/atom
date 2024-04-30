@@ -113,7 +113,6 @@ dl.form > dt label {
   background-image: url("/images/spinners/octocat-spinner-32.gif");
   background-size: 16px;
 essful,
-dl.form > dd input[type=password].is-autocheck-successful,
 dl.form > dd input[type=email].is-autocheck-successful {
   background-image: url("/images/modules/ajax/success.png");
 }
