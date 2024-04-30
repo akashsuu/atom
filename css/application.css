@@ -4046,7 +4046,7 @@ hr {
 }
 
 .sunset-text-color {
-  color: #ffd152;
+  color: #b8f7ff;
 }
 
 .sunset-banner {
@@ -5221,7 +5221,7 @@ body.menu-active .modal-backdrop {
   float: left;
 }
 .user-card .body h4 {
-  color: #3b9b6d;
+  color: #161d1a;
 }
 .user-card p {
   margin: 0;
@@ -5273,7 +5273,7 @@ body.menu-active .modal-backdrop {
 
 .welcome {
   background-color: #111111;      /*middlepage*/
-  color: #efdab9;
+  color: #95FBf2;
   font: 16px/1.5 normal normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
@@ -5444,7 +5444,7 @@ body.menu-active .modal-backdrop {
 }
 
 .hero-tagline-highlight {
-  color: #78b0a0;
+  color: #8a4cd6;
   font-weight: inherit;
 }
 
