@@ -5261,7 +5261,7 @@ body.menu-active .modal-backdrop {
   margin: 0;
 }
 .user-show .count {
-  background-color: #bc1515;
+  background-color: #eee;
   border-radius: 3px;
   color: #d0a349;
   font-size: 18px;
@@ -5272,7 +5272,7 @@ body.menu-active .modal-backdrop {
 }
 
 .welcome {
-  background-color: #161E31;      /*middlepage*/
+  background-color: #111111;      /*middlepage*/
   color: #efdab9;
   font: 16px/1.5 normal normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -5408,7 +5408,7 @@ body.menu-active .modal-backdrop {
 }
 
 .section--hero {
-  background-image: radial-gradient(ellipse closest-side at 50% 50%, #161E31, #161E31 25%, #161E31);              /*upperpage*/
+  background-image: radial-gradient(ellipse closest-side at 50% 50%, #111111, #111111 25%, #111111);              /*upperpage*/
   background-position: center -120px;
   background-repeat: no-repeat;
   background-size: 100% 1000px;
@@ -5473,34 +5473,29 @@ body.menu-active .modal-backdrop {
   will-change: transform;
 }
 .hero-logo-circle:nth-child(1) {
-  animation-duration: 30s;
+  animation-duration: 80s;
 }
+
 .hero-logo-circle:nth-child(2) {
-  animation-duration: 40s;
-}
-.hero-logo-circle:nth-child(3) {
-  animation-duration: 50s;
+  animation-duration: 0s;
 }
 .hero-logo-circle:nth-child(4) {
-  animation-duration: 60s;
+  animation-duration: 80s;
 }
 .hero-logo-circle:nth-child(5) {
-  animation-duration: 70s;
+  animation-duration: 0s;
 }
 .hero-logo-circle:nth-child(6) {
   animation-duration: 80s;
 }
 .hero-logo-circle:nth-child(7) {
-  animation-duration: 90s;
+  animation-duration: 0s;
 }
 .hero-logo-circle:nth-child(8) {
-  animation-duration: 100s;
+  animation-duration: 80s;
 }
 .hero-logo-circle:nth-child(9) {
-  animation-duration: 110s;
-}
-.hero-logo-circle:nth-child(10) {
-  animation-duration: 120s;
+  animation-duration: 80s;
 }
 
 @keyframes hero-logo-circle {
@@ -5606,7 +5601,7 @@ body.menu-active .modal-backdrop {
   padding-right: 470px;
 }
 .section--realtime .welcome-bg--screenshot {
- 
+
   left: 50%;
   margin-left: 40px;
 }
@@ -5620,7 +5615,7 @@ body.menu-active .modal-backdrop {
   padding-left: 470px;
 }
 .section--github .welcome-bg--screenshot {
- 
+
 }
 .section--github .welcome-button {
   background-color: #61efce;
@@ -5660,8 +5655,8 @@ body.menu-active .modal-backdrop {
 }
 
 .section--contact {
-  background-color: #161E31;       /*footerpage*/
-  background-image: url("/assets/images/index-rocket.svg");
+  background-color: #111111;       /*footerpage*/
+  background-image: url("/assets/images/AKASHSUU.png");
   background-position: calc(50% + 380px) 60px;
   background-repeat: no-repeat;
   border-top: 1px solid #1a191a;
@@ -5838,13 +5833,13 @@ body.menu-active .modal-backdrop {
 .welcome-nightly .hero-logo {
   filter: brightness(0.8) contrast(0.6) sepia(0.9) hue-rotate(215deg) saturate(6);
 }
-.welcome-nightly .hero-logo-circle:nth-child(4) {
+.welcome-nightly .hero-logo-circle:nth-child(7) {
   animation-name: hero-logo-circle--reverse;
 }
 .welcome-nightly .hero-logo-circle:nth-child(8) {
   animation-name: hero-logo-circle--reverse;
 }
-.welcome-nightly .hero-logo-circle:nth-child(10) {
+.welcome-nightly .hero-logo-circle:nth-child(9) {
   animation-name: hero-logo-circle--reverse;
 }
 .welcome-nightly .welcome-button {
