@@ -13,13 +13,6 @@ label {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   color: 
 }
-}
-
-.input-block {
-  display: block;
-  width: 100%;
-}
-
 .input-monospace {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
