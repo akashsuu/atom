@@ -126,11 +126,7 @@ dl.form.flattened > dd {
   width: 440px;
 }
 
-}
-dl.form > dd input[type=text].shorter,
-dl.form > dd input[type=password].shorter,
-dl.form > dd input[type=email].shorter {
-  width: 130px;
+
 }
 
   width: 100%;
