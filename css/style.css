@@ -10,12 +10,6 @@ label {
   font-weight: bold;
 dl.form.flattened > dt {
   margin-right: 5px;
-  max-width: 100%;
-  width: 440px;
-}
-dl.form > dd input[type=text].short,
-dl.form > dd input[type=password].short,
-dl.form > dd input[type=email].short {
   width: 250px;
 }
 dl.form > dd input[type=text].shorter,
