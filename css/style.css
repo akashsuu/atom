@@ -13,13 +13,6 @@ label {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   color: 
 }
-
-::-webkit-validation-bubb
-input.input-mini {
-  font-size: 12px;
-  min-height: 26px;
-  padding-bottom: 4px;
-  padding-top: 4px;
 }
 
 input.input-large {
