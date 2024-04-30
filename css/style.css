@@ -11,15 +11,7 @@ label {
 }
 
   box-s
-dl.form input[typ
-  background-color: #fff;
-}
-dl.form > dt {
-  margin: 0 0 6px;
-}
-dl.form > dt label {
-  position: relative;
-}
+dl.form inpu
 dl.form.flattened > dt {
   float: left;
   line-height: 32px;
