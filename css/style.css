@@ -10,17 +10,7 @@ label {
   font-weight: bold;
 }
 
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  color: 
-}
-.input-monospace {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-}
-
-dl.form {
-  margin: 15px 0;
-}
-dl.form input[type=text],
+  box-s
 dl.form input[type=password],
 dl.form input[type=email],
 dl.form textarea {
