@@ -16,10 +16,7 @@ input[type=text].focuand-d
 .focused input[type=url] .drag-and-drop,
 input[type=url].focus,
 input[type=url]:focus,
-input[type=search] .focused .drag-and-drop,
-.focused input[type=search] .drag-and-drop,
-input[type=search].focus,
-input[type=search]:focus,
+input[type=sear
 textarea .focused .drag-and-drop,
 .focused textarea .drag-and-drop,
 textarea.focus,
