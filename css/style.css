@@ -14,9 +14,6 @@ label {
 
 
 input.input-contrast,
-.input-contrast {
-  background-color: #fafafa;
-}
 input.input-contrast:focus,
 .input-contrast:focus {
   background-color: #fff;
