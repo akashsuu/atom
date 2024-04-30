@@ -10,16 +10,6 @@ label {
 }
 .form-cards .card.disabled {
   opacity: 0.2;
-.form-cards > .car
-  display: inline-block;
-  vertical-align: middle;
-}
-dl.form.successful .success {
-  color: #390;
-  display: inline;
-}
-dl.form.errored > dt label {
-  color: #900;
 }
 dl.form.errored .error {
   color: #900;
