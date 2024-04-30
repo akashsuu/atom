@@ -9,14 +9,6 @@ label {
   font-size: 13px;
   font-weight: bold;
 dl.form.flattened > dt {
-  float: left;
-  line-heig
-  line-height: 32px;
-}
-dl.form > dd input[type=text],
-dl.form > dd input[type=password],
-dl.form > dd input[type=email] {
-  background-position-x: 98%;
   margin-right: 5px;
   max-width: 100%;
   width: 440px;
