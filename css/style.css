@@ -13,11 +13,6 @@ label {
 }
 .hfields:b
   content: "";
-}
-.hfields dl.form {
-  float: left;
-  margin: 0 30px 0 0;
-}
 .hfields dl.form > dt label {
   color: #666;
   display: inline-block;
