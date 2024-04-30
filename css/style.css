@@ -11,15 +11,6 @@ label {
 .form-cards .card.disabled {
   opacity: 0.2;
 .form-cards > .car
-  }
-}
-dl.form.loading {
-  opacity: 0.5;
-}
-dl.form.loading .indicator {
-  display: inline;
-}
-dl.form.loading .spinner {
   display: inline-block;
   vertical-align: middle;
 }
