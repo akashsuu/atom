@@ -125,10 +125,7 @@ dl.form.flattened > dd {
   max-width: 100%;
   width: 440px;
 }
-dl.form > dd input[type=text].short,
-dl.form > dd input[type=password].short,
-dl.form > dd input[type=email].short {
-  width: 250px;
+
 }
 dl.form > dd input[type=text].shorter,
 dl.form > dd input[type=password].shorter,
