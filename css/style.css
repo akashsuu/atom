@@ -30,15 +30,7 @@ textarea {
 input[type=text] .focused .drag-and-drop,
 .focused input[type=text] .drag-and-drop,
 
-input[type=number].focus,
-input[type=number]:focus,
-input[type=tel] .focused .drag-and-drop,
-.focused input[type=tel] .drag-and-drop,
-input[type=tel].focus,
-input[type=tel]:focus,
-input[type=url] .focused .drag-and-drop,
-.focused input[type=url] .drag-and-drop,
-input[type=url].focus,
+
 input[type=url]:focus,
 input[type=search] .focused .drag-and-drop,
 .focused input[type=search] .drag-and-drop,
