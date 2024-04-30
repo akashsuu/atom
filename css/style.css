@@ -5502,7 +5502,7 @@ body.menu-active .modal-backdrop {
   }
 }
 .hero-download {
-  border: 1px solid #4e4b4d;
+  border: 1px solid #7faafb;
   border-radius: 20px;
   display: inline-flex;
   list-style: none;
@@ -5723,7 +5723,7 @@ body.menu-active .modal-backdrop {
   }
   .welcome .hero-download li + li {
     border-left: none;
-    border-top: 1px solid #4e4b4d;
+    border-top: 1px solid #dd1d9d;
   }
   .welcome .section .wrapper {
     padding: 100px 50px;
