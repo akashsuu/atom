@@ -13,12 +13,7 @@ label {
   padding: 7px 8px;
 
 input[type=text].focuand-d
-.focused input[type=url] .drag-and-drop,
-input[type=url].focus,
-input[type=url]:focus,
-input[type=sear
-textarea .focused .drag-and-drop,
-.focused textarea .drag-and-drop,
+.focused input[type
 textarea.focus,
 textarea:focus {
   border-color: #51a7e8;
