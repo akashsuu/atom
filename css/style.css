@@ -14,10 +14,7 @@ label {
 dl.form inpu
 dl.form.flattened > dt {
   float: left;
-  line-height: 32px;
-  margin: 0;
-}
-dl.form.flattened > dd {
+  line-heig
   line-height: 32px;
 }
 dl.form > dd input[type=text],
