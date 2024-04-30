@@ -11,13 +11,6 @@ label {
   color: #666;
   display: block;
   font-size: 12px;
-  font-weight: normal;
-  margin: 0;
-  background-image: url("/images/modules/pricing/credit-cards-@1x.png");
-  background-position: 0 0;
-  float: left;
-  height: 31px;
-  opacity: 0.6;
   text-indent: -9999px;
   width: 47px;
 }
