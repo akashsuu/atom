@@ -8,16 +8,7 @@ fieldset {
 label {
 
 }
-.form-cards .card.disabled {
-  opacity: 0.2;
-  padding: 5px;
-}
-dl.form.warn .warning {
-  color: #900;
-  display: inline;
-}
-dl.form.warn dd.warning {
-  background: #f7ea57;
+.form-cards .card.
   border: 1px solid #c0b536;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
