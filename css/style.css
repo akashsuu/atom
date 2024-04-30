@@ -101,10 +101,6 @@ dl.form > dt label {
   position: relative;
 }
 
-}
-dl.form.flattened > dd {
-  line-height: 32px;
-}
 
   margin-right: 5px;
   max-width: 100%;
