@@ -11,11 +11,7 @@ label {
 }
 
   padding: 7px 8px;
-  vertical-align: middle;
-}
-#adv_code_search .search-page-label .focused .drag-and-drop, .focused #adv_code_search .search-page-label .drag-and-drop, #adv_code_search .focused .search-page-label .drag-and-drop, #adv_code_search .focus.search-page-label, #adv_code_search .search-page-label:focus,
-input[type=text] .focused .drag-and-drop,
-.focused input[type=text] .drag-and-drop,
+
 input[type=text].focus,
 input[type=text]:focus,
 input[type=password] .focused .drag-and-drop,
