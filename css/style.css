@@ -9,16 +9,6 @@ label {
   font-size: 13px;
   font-weight: b
   margin-top: 0;
-}
-dl.form.required > dt > label::after {
-  color: #9f1006;
-  content: "*";
-  padding-left: 5px;
-}
-
-.form-checkbox {
-  margin: 15px 0;
-  padding-left: 20px;
   vertical-align: middle;
 }
 .form-checkbox label em.highlight {
