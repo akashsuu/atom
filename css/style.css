@@ -12,14 +12,7 @@ label {
 
   padding: 7px 8px;
 
-input[type=text].focus,
-input[type=text]:focus,
-input[type=password] .focusand-drop,
-.focused input[type=email] .drag-and-drop,
-input[type=email].focus,
-input[type=email]:focus,
-input[type=number] .focused .drag-and-drop,
-.focused input[type=number] .drag-and-drop,
+input[type=text].focuand-drop,
 input[type=number].focus,
 input[type=number]:focus,
 input[type=tel] .focused .drag-and-drop,
