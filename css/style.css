@@ -6,18 +6,7 @@ fieldset {
 }
 
 label {
-  font-si
-.form-checkbox .note {
-  color: #666;
-  display: block;
-  font-size: 12p
-  background-position: -200px 0;
-}
-.form-cards .card.dinersclub {
-  background-position: -250px 0;
-}
-.form-cards .card.enabled {
-  opacity: 1;
+
 }
 .form-cards .card.disabled {
   opacity: 0.2;
