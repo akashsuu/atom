@@ -132,9 +132,7 @@ dl.form > dd input[type=password].shorter,
 dl.form > dd input[type=email].shorter {
   width: 130px;
 }
-dl.form > dd input[type=text].long,
-dl.form > dd input[type=password].long,
-dl.form > dd input[type=email].long {
+
   width: 100%;
 }
 dl.form > dd input[type=text].is-autocheck-loading,
