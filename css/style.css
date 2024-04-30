@@ -10,14 +10,6 @@ label {
 }
 .form-cards .card.disabled {
   opacity: 0.2;
-}
-dl.form.errored .error {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-color: #fff;
-  color: #494620;
-  display: inline-block;
-  font-size: 11px;
   padding: 5px;
 }
 dl.form.warn .warning {
