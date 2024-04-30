@@ -10,17 +10,7 @@ label {
   font-weight: bold;
 dl.form.flattened > dt {
   margin-rigading {
-  background-image: url("/images/spinners/octocat-spinner-32.gif");
-  background-size: 16px;
-}
-}
-dl.form > dd textarea.short {
-  height: 50px;
-  min-height: 50px;
-}
-dl.form > dd p.note {
-  color: #777;
-  font-size: 12px;
+  background-image:
   margin: 4px 0 2px;
   min-height: 17px;
 }
