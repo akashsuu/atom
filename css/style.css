@@ -97,7 +97,7 @@ input::-webkit-validation-bubble-icon {
 
 ::-webkit-validation-bubble-arrow {
   background-color: #9c2400;
-  border: solid 1px #9c2400;
+  border: solid 1px #;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
