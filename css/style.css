@@ -131,9 +131,7 @@ dl.form.flattened > dd {
 
   width: 100%;
 }
-dl.form > dd input[type=text].is-autocheck-loading,
-dl.form > dd input[type=password].is-autocheck-loading,
-dl.form > dd input[type=email].is-autocheck-loading {
+ {
   background-image: url("/images/spinners/octocat-spinner-32.gif");
   background-size: 16px;
 }
