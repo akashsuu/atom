@@ -9,16 +9,7 @@ label {
 
 }
 .form-cards .card.
-  border: 1
-  background: #f7ea57;
-  border: 1px solid #c0b536;
-  border-bottom-l
-  margin-top: -1px;
-  padding: 5px;
-}
-
-.hfields {
-  margin: 15px 0;
+ 
 }
 .hfields:before {
   display: table;
