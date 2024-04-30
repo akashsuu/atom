@@ -9,16 +9,7 @@ label {
 
 }
 .form-cards .card.
-  border: 1px solid #c0b536;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-color: #fff;
-  color: #494620;
-  display: inline-block;
-  font-size: 11px;
-  padding: 5px;
-}
-dl.form .form-note {
+  border: 1
   background: #f7ea57;
   border: 1px solid #c0b536;
   border-bottom-left-radius: 3px;
