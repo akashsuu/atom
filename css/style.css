@@ -6,15 +6,7 @@ fieldset {
 }
 
 label {
-  font-size: 13px;
-  font-weight: b
-  margin-top: 0;
-  vertical-align:ox],
-.form-checkbox input[type=radio] {
-  float: left;
-  margin: 2px 0 0 -20px;
-  vertical-align: middle;
-}
+  font-si
 .form-checkbox .note {
   color: #666;
   display: block;
