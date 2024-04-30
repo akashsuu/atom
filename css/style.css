@@ -14,12 +14,7 @@ label {
 
 
 input.input-contrast,
-input.input-contrast:focus,
-.input-contrast:focus {
-  background-color: #fff;
-}
-
-::placeholder {
+input.input-c
   color: #aaa;
 }
 
