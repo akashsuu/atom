@@ -11,14 +11,7 @@ label {
   color: #666;
   display: block;
   font-size: 12px;
-  text-indent: -9999px;
-  width: 47px;
-}
-.form-cards .card.visa {
-  background-position: 0 0;
-}
-.form-cards .card.amex {
-  background-position: -50px 0;
+  text-ind;
 }
 .form-cards .card.mastercard {
   background-position: -100px 0;
