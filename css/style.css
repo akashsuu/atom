@@ -13,13 +13,6 @@ dl.form.flattened > dt {
   background-image: url("/images/spinners/octocat-spinner-32.gif");
   background-size: 16px;
 }
-dl.form > dd input[type=email].is-autocheck-errored {
-  background-image: url("/images/modules/ajax/error.png");
-}
-dl.form > dd textarea {
-  height: 200px;
-  min-height: 200px;
-  width: 100%;
 }
 dl.form > dd textarea.short {
   height: 50px;
