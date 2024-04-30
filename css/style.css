@@ -13,13 +13,6 @@ dl.form.flattened > dt {
   background-image: url("/images/spinners/octocat-spinner-32.gif");
   background-size: 16px;
 }
-dl.form > dd input[type=text].is-autocheck-successful,
-dl.form > dd input[type=password].is-autocheck-successful,
-dl.form > dd input[type=email].is-autocheck-successful {
-  background-image: url("/images/modules/ajax/success.png");
-}
-dl.form > dd input[type=text].is-autocheck-errored,
-dl.form > dd input[type=password].is-autocheck-errored,
 dl.form > dd input[type=email].is-autocheck-errored {
   background-image: url("/images/modules/ajax/error.png");
 }
