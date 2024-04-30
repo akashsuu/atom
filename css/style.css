@@ -6,13 +6,395 @@ fieldset {
 }
 
 label {
+  font-size: 13px;
+  font-weight: bold;
+}
 
+#adv_code_search .search-page-label,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=url],
+input[type=search],
+textarea {
+  background-color: #fff;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  color: #333;
+  font-size: 13px;
+  min-height: 34px;
+  outline: none;
+  padding: 7px 8px;
+  vertical-align: middle;
 }
-.form-cards .card.
- 
+#adv_code_search .search-page-label .focused .drag-and-drop, .focused #adv_code_search .search-page-label .drag-and-drop, #adv_code_search .focused .search-page-label .drag-and-drop, #adv_code_search .focus.search-page-label, #adv_code_search .search-page-label:focus,
+input[type=text] .focused .drag-and-drop,
+.focused input[type=text] .drag-and-drop,
+input[type=text].focus,
+input[type=text]:focus,
+input[type=password] .focused .drag-and-drop,
+.focused input[type=password] .drag-and-drop,
+input[type=password].focus,
+input[type=password]:focus,
+input[type=email] .focused .drag-and-drop,
+.focused input[type=email] .drag-and-drop,
+input[type=email].focus,
+input[type=email]:focus,
+input[type=number] .focused .drag-and-drop,
+.focused input[type=number] .drag-and-drop,
+input[type=number].focus,
+input[type=number]:focus,
+input[type=tel] .focused .drag-and-drop,
+.focused input[type=tel] .drag-and-drop,
+input[type=tel].focus,
+input[type=tel]:focus,
+input[type=url] .focused .drag-and-drop,
+.focused input[type=url] .drag-and-drop,
+input[type=url].focus,
+input[type=url]:focus,
+input[type=search] .focused .drag-and-drop,
+.focused input[type=search] .drag-and-drop,
+input[type=search].focus,
+input[type=search]:focus,
+textarea .focused .drag-and-drop,
+.focused textarea .drag-and-drop,
+textarea.focus,
+textarea:focus {
+  border-color: #51a7e8;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
 }
-.hfields:b
+
+input.input-contrast,
+.input-contrast {
+  background-color: #fafafa;
+}
+input.input-contrast:focus,
+.input-contrast:focus {
+  background-color: #fff;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+::-webkit-validation-bubble-message {
+  background: #9c2400;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 12px;
+}
+
+input::-webkit-validation-bubble-icon {
+  display: none;
+}
+
+::-webkit-validation-bubble-arrow {
+  background-color: #9c2400;
+  border: solid 1px #9c2400;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input.input-mini {
+  font-size: 12px;
+  min-height: 26px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+input.input-large {
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+.input-block {
+  display: block;
+  width: 100%;
+}
+
+.input-monospace {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+dl.form {
+  margin: 15px 0;
+}
+dl.form input[type=text],
+dl.form input[type=password],
+dl.form input[type=email],
+dl.form textarea {
+  background-color: #fafafa;
+}
+dl.form input[type=text]:focus,
+dl.form input[type=password]:focus,
+dl.form input[type=email]:focus,
+dl.form textarea:focus {
+  background-color: #fff;
+}
+dl.form > dt {
+  margin: 0 0 6px;
+}
+dl.form > dt label {
+  position: relative;
+}
+dl.form.flattened > dt {
+  float: left;
+  line-height: 32px;
+  margin: 0;
+}
+dl.form.flattened > dd {
+  line-height: 32px;
+}
+dl.form > dd input[type=text],
+dl.form > dd input[type=password],
+dl.form > dd input[type=email] {
+  background-position-x: 98%;
+  margin-right: 5px;
+  max-width: 100%;
+  width: 440px;
+}
+dl.form > dd input[type=text].short,
+dl.form > dd input[type=password].short,
+dl.form > dd input[type=email].short {
+  width: 250px;
+}
+dl.form > dd input[type=text].shorter,
+dl.form > dd input[type=password].shorter,
+dl.form > dd input[type=email].shorter {
+  width: 130px;
+}
+dl.form > dd input[type=text].long,
+dl.form > dd input[type=password].long,
+dl.form > dd input[type=email].long {
+  width: 100%;
+}
+dl.form > dd input[type=text].is-autocheck-loading,
+dl.form > dd input[type=password].is-autocheck-loading,
+dl.form > dd input[type=email].is-autocheck-loading {
+  background-image: url("/images/spinners/octocat-spinner-32.gif");
+  background-size: 16px;
+}
+dl.form > dd input[type=text].is-autocheck-successful,
+dl.form > dd input[type=password].is-autocheck-successful,
+dl.form > dd input[type=email].is-autocheck-successful {
+  background-image: url("/images/modules/ajax/success.png");
+}
+dl.form > dd input[type=text].is-autocheck-errored,
+dl.form > dd input[type=password].is-autocheck-errored,
+dl.form > dd input[type=email].is-autocheck-errored {
+  background-image: url("/images/modules/ajax/error.png");
+}
+dl.form > dd textarea {
+  height: 200px;
+  min-height: 200px;
+  width: 100%;
+}
+dl.form > dd textarea.short {
+  height: 50px;
+  min-height: 50px;
+}
+dl.form > dd p.note {
+  color: #777;
+  font-size: 12px;
+  margin: 4px 0 2px;
+  min-height: 17px;
+}
+dl.form > dd p.note .spinner {
+  margin-right: 3px;
+  vertical-align: middle;
+}
+dl.form > dd h4 {
+  margin: 4px 0 0;
+}
+dl.form > dd h4.is-error {
+  color: #bd2c00;
+}
+dl.form > dd h4.is-success {
+  color: #6cc644;
+}
+dl.form > dd h4 + p.note {
+  margin-top: 0;
+}
+dl.form.required > dt > label::after {
+  color: #9f1006;
+  content: "*";
+  padding-left: 5px;
+}
+
+.form-checkbox {
+  margin: 15px 0;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+.form-checkbox label em.highlight {
+  background: #fffbdc;
+  border-radius: 3px;
+  font-style: normal;
+  left: -4px;
+  padding: 2px 4px;
+  position: relative;
+}
+.form-checkbox input[type=checkbox],
+.form-checkbox input[type=radio] {
+  float: left;
+  margin: 2px 0 0 -20px;
+  vertical-align: middle;
+}
+.form-checkbox .note {
+  color: #666;
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.form-cards {
+  height: 31px;
+  margin: 0 0 15px;
+}
+.form-cards .card {
+  background-image: url("/images/modules/pricing/credit-cards-@1x.png");
+  background-position: 0 0;
+  float: left;
+  height: 31px;
+  opacity: 0.6;
+  text-indent: -9999px;
+  width: 47px;
+}
+.form-cards .card.visa {
+  background-position: 0 0;
+}
+.form-cards .card.amex {
+  background-position: -50px 0;
+}
+.form-cards .card.mastercard {
+  background-position: -100px 0;
+}
+.form-cards .card.discover {
+  background-position: -150px 0;
+}
+.form-cards .card.jcb {
+  background-position: -200px 0;
+}
+.form-cards .card.dinersclub {
+  background-position: -250px 0;
+}
+.form-cards .card.enabled {
+  opacity: 1;
+}
+.form-cards .card.disabled {
+  opacity: 0.2;
+}
+.form-cards > .cards {
+  margin: 0;
+}
+.form-cards > .cards > li {
+  float: left;
+  list-style-type: none;
+  margin: 0 4px 0 0;
+}
+.form-cards > .cards > li.text {
+  color: #999;
+  font-size: 11px;
+  line-height: 31px;
+}
+
+@media only screen and (resolution >= 2dppx) {
+  .form-cards > .cards .card {
+    background-image: url("/images/modules/pricing/credit-cards-@2x.png");
+    background-size: 300px 31px;
+  }
+}
+dl.form .success,
+dl.form .error,
+dl.form .indicator {
+  display: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+dl.form.loading {
+  opacity: 0.5;
+}
+dl.form.loading .indicator {
+  display: inline;
+}
+dl.form.loading .spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+dl.form.successful .success {
+  color: #390;
+  display: inline;
+}
+dl.form.errored > dt label {
+  color: #900;
+}
+dl.form.errored .error {
+  color: #900;
+  display: inline;
+}
+dl.form.errored dd.error,
+dl.form.errored dd.warning {
+  background: #f7ea57;
+  border: 1px solid #c0b536;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-color: #fff;
+  color: #494620;
+  display: inline-block;
+  font-size: 11px;
+  padding: 5px;
+}
+dl.form.warn .warning {
+  color: #900;
+  display: inline;
+}
+dl.form.warn dd.warning {
+  background: #f7ea57;
+  border: 1px solid #c0b536;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-color: #fff;
+  color: #494620;
+  display: inline-block;
+  font-size: 11px;
+  padding: 5px;
+}
+dl.form .form-note {
+  background: #f7ea57;
+  border: 1px solid #c0b536;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-color: #fff;
+  color: #494620;
+  display: inline-block;
+  font-size: 11px;
+  margin-top: -1px;
+  padding: 5px;
+}
+
+.hfields {
+  margin: 15px 0;
+}
+.hfields:before {
+  display: table;
   content: "";
+}
+.hfields:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.hfields dl.form {
+  float: left;
+  margin: 0 30px 0 0;
+}
 .hfields dl.form > dt label {
   color: #666;
   display: inline-block;
