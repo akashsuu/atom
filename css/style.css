@@ -109,10 +109,7 @@ dl.form > dt {
 dl.form > dt label {
   position: relative;
 }
-dl.form.flattened > dt {
-  float: left;
-  line-height: 32px;
-  margin: 0;
+
 }
 dl.form.flattened > dd {
   line-height: 32px;
