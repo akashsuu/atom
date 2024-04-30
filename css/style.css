@@ -11,15 +11,7 @@ label {
 }
 
   box-s
-dl.form input[type=password],
-dl.form input[type=email],
-dl.form textarea {
-  background-color: #fafafa;
-}
-dl.form input[type=text]:focus,
-dl.form input[type=password]:focus,
-dl.form input[type=email]:focus,
-dl.form textarea:focus {
+dl.form input[typ
   background-color: #fff;
 }
 dl.form > dt {
