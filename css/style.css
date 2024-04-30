@@ -9,14 +9,7 @@ label {
   font-size: 13px;
   font-weight: bold;
 dl.form.flattened > dt {
-  margin-right: 5px;
-  width: 250px;
-}
-  width: 100%;
-}
-dl.form > dd input[type=text].is-autocheck-loading,
-dl.form > dd input[type=password].is-autocheck-loading,
-dl.form > dd input[type=email].is-autocheck-loading {
+  margin-rigading {
   background-image: url("/images/spinners/octocat-spinner-32.gif");
   background-size: 16px;
 }
