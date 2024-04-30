@@ -9,11 +9,7 @@ label {
   font-size: 13px;
   font-weight: bold;
 }
-textarea {
-  background-color: #
-  font-size: 13px;
-  min-height: 34px;
-  outline: none;
+
   padding: 7px 8px;
   vertical-align: middle;
 }
