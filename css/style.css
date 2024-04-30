@@ -12,10 +12,7 @@ label {
 
   padding: 7px 8px;
 
-input[type=text].focuand-drop,
-input[type=number].focus,
-input[type=number]
-input[type=url] .focused .drag-and-drop,
+input[type=text].focuand-d
 .focused input[type=url] .drag-and-drop,
 input[type=url].focus,
 input[type=url]:focus,
