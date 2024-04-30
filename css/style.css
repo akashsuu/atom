@@ -91,8 +91,7 @@ dl.form {
 
   background-color: #fff;
 }
-dl.form > dt {
-  margin: 0 0 6px;
+
 }
 dl.form > dt label {
   position: relative;
