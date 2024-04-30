@@ -10,16 +10,7 @@ label {
 .form-checkbox .note {
   color: #666;
   display: block;
-  font-size: 12px;
-  text-ind;
-}
-.form-cards .card.mastercard {
-  background-position: -100px 0;
-}
-.form-cards .card.discover {
-  background-position: -150px 0;
-}
-.form-cards .card.jcb {
+  font-size: 12p
   background-position: -200px 0;
 }
 .form-cards .card.dinersclub {
