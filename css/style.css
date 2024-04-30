@@ -11,13 +11,7 @@ label {
 .form-cards .card.
  
 }
-.hfields:before {
-  display: table;
-  content: "";
-}
-.hfields:after {
-  display: table;
-  clear: both;
+.hfields:b
   content: "";
 }
 .hfields dl.form {
