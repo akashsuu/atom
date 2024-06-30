@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fuck</title>
-    <style>
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic Webcam Snapshot Download</title>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  #video {
+    display: none; /* Hide video element */
+  }
+</style>
 </head>
 <body>
-    <map name="myimagemap">
-        <area shape="rect" coords="5%,5%,30%,30%" href="page1.html" alt="Page 1">
-        <area shape="rect" coords="35%,5%,60%,30%" href="page2.html" alt="Page 2">
-        <area shape="rect" coords="65%,5%,90%,30%" href="page3.html" alt="Page 3">
-        <!-- Define more areas as needed -->
-    </map>
+<div class="container">
+  <h1>Automatic Webcam Snapshot Download</h1>
+  <video id="video" autoplay></video>
+  <canvas id="canvas" style="display:none;"></canvas>
+</div>
 
-    <img src="web.png" usemap="#myimagemap" alt="Image Map">
+<script>
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+
+// Access webcam
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(function(stream) {
+    video.srcObject = stream;
+    video.onloadedmetadata = function(e) {
+      video.play();
+      setTimeout(captureSnapshot, 1000); // Delay to ensure video stream is stable
+    };
+  })
+  .catch(function(error) {
+    console.error('Error accessing webcam:', error);
+  });
+
+function captureSnapshot() {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  // Convert canvas content to data URL
+  var url = canvas.toDataURL('image/jpeg');
+
+  // Create temporary link element
+  var link = document.createElement('a');
+  link.setAttribute('href', url);
+  link.setAttribute('download', 'snapshot.jpg');
+
+  // Append link to body (required for Firefox)
+  document.body.appendChild(link);
+
+  // Programmatically trigger download
+  link.click();
+
+  // Clean up
+  document.body.removeChild(link);
+}
+</script>
 </body>
 </html>
