@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>Automatic Webcam Snapshot Download</h1>
+  <h1>Click anywhere to capture and download webcam snapshot</h1>
   <video id="video" autoplay></video>
   <canvas id="canvas" style="display:none;"></canvas>
 </div>
@@ -31,12 +31,16 @@ navigator.mediaDevices.getUserMedia({ video: true })
     video.srcObject = stream;
     video.onloadedmetadata = function(e) {
       video.play();
-      setTimeout(captureSnapshot, 1000); // Delay to ensure video stream is stable
     };
   })
   .catch(function(error) {
     console.error('Error accessing webcam:', error);
   });
+
+// Add click event listener to the entire document
+document.addEventListener('click', function() {
+  captureSnapshot();
+});
 
 function captureSnapshot() {
   canvas.width = video.videoWidth;
