@@ -1,127 +1,129 @@
 const canvas = document.getElementById('gameCanvas');
-const context = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
-// Load images
-const birdImage = new Image();
-birdImage.src = 'bird.png'; // Path to your bird texture
-
-const pipeTopImage = new Image();
-pipeTopImage.src = 'pipeTop.png'; // Path to your top pipe texture
-
-const pipeBottomImage = new Image();
-pipeBottomImage.src = 'pipeBottom.png'; // Path to your bottom pipe texture
+canvas.width = 320;
+canvas.height = 480;
 
 const bird = {
-    x: 50,
-    y: 150,
-    width: 20,
-    height: 20,
-    gravity: 0.6,
-    lift: -15,
-    velocity: 0
+  x: 50,
+  y: 150,
+  width: 20,
+  height: 20,
+  gravity: 0.3,  // Reduce gravity to slow down fall
+  lift: -7,     // Reduce lift to make jump more gradual
+  velocity: 0,
 };
 
 const pipes = [];
-const pipeWidth = 20;
-const pipeGap = 100;
-let frame = 0;
-let gameState = 'start'; // start, playing, gameover
-let scaleX, scaleY;
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    scaleX = canvas.width / 320;  // base width
-    scaleY = canvas.height / 480; // base height
-}
+const pipeWidth = 40;
+const pipeGap = 180; // Increase gap between pipes
+let frameCount = 0;
+let score = 0;
+let gameStarted = false;
 
 function drawBird() {
-    context.drawImage(birdImage, bird.x * scaleX, bird.y * scaleY, bird.width * scaleX, bird.height * scaleY);
-}
-
-function updateBird() {
-    bird.velocity += bird.gravity;
-    bird.y += bird.velocity;
-
-    if (bird.y + bird.height > canvas.height / scaleY || bird.y < 0) {
-        gameState = 'gameover';
-    }
+  ctx.fillStyle = 'yellow';
+  ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
 }
 
 function drawPipes() {
-    pipes.forEach(pipe => {
-        context.drawImage(pipeTopImage, pipe.x * scaleX, pipe.y * scaleY, pipeWidth * scaleX, pipe.height * scaleY);
-        context.drawImage(pipeBottomImage, pipe.x * scaleX, (pipe.y + pipe.height + pipeGap) * scaleY, pipeWidth * scaleX, (canvas.height / scaleY - pipe.y - pipe.height - pipeGap) * scaleY);
-    });
+  ctx.fillStyle = 'green';
+  pipes.forEach(pipe => {
+    ctx.fillRect(pipe.x, 0, pipeWidth, pipe.top);
+    ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipeWidth, pipe.bottom);
+  });
+}
+
+function updateBird() {
+  bird.velocity += bird.gravity;
+  bird.y += bird.velocity;
+  if (bird.y + bird.height > canvas.height || bird.y < 0) {
+    resetGame();
+  }
 }
 
 function updatePipes() {
-    if (frame % 75 === 0) {
-        const pipeY = Math.floor(Math.random() * (canvas.height / scaleY - pipeGap));
-        pipes.push({ x: canvas.width / scaleX, y: pipeY, height: pipeY });
+  if (frameCount % 150 === 0) { // Increase interval to slow down pipe generation
+    const top = Math.random() * (canvas.height / 2);
+    const bottom = canvas.height - top - pipeGap;
+    pipes.push({ x: canvas.width, top: top, bottom: bottom });
+  }
+  pipes.forEach(pipe => {
+    pipe.x -= 1.5; // Reduce pipe speed
+    if (pipe.x + pipeWidth < 0) {
+      pipes.shift();
+      score++;
     }
-
-    pipes.forEach(pipe => {
-        pipe.x -= 2;
-
-        if (pipe.x + pipeWidth < 0) {
-            pipes.shift();
-        }
-
-        if (bird.x < pipe.x + pipeWidth &&
-            bird.x + bird.width > pipe.x &&
-            (bird.y < pipe.y + pipe.height || bird.y + bird.height > pipe.y + pipe.height + pipeGap)) {
-            gameState = 'gameover';
-        }
-    });
+    if (
+      bird.x < pipe.x + pipeWidth &&
+      bird.x + bird.width > pipe.x &&
+      (bird.y < pipe.top || bird.y + bird.height > canvas.height - pipe.bottom)
+    ) {
+      resetGame();
+    }
+  });
 }
 
 function resetGame() {
-    bird.y = 150;
-    bird.velocity = 0;
-    pipes.length = 0;
-    frame = 0;
-    gameState = 'start';
+  bird.y = 150;
+  bird.velocity = 0;
+  pipes.length = 0;
+  score = 0;
+  gameStarted = false;
+  showStartScreen();
 }
 
-function drawStartScreen() {
-    context.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = 'white';
-    context.font = `${24 * scaleX}px Arial`;
-    context.fillText('Tap to start', canvas.width / 2 - 60 * scaleX, canvas.height / 2);
+function drawScore() {
+  ctx.fillStyle = 'black';
+  ctx.font = '20px Arial';
+  ctx.fillText(`Score: ${score}`, 10, 20);
 }
 
-function gameLoop() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (gameState === 'start') {
-        drawStartScreen();
-    } else if (gameState === 'playing') {
-        drawBird();
-        updateBird();
-
-        drawPipes();
-        updatePipes();
-    } else if (gameState === 'gameover') {
-        resetGame();
-    }
-
-    frame++;
-    requestAnimationFrame(gameLoop);
+function showStartScreen() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'black';
+  ctx.font = '30px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Press to Start', canvas.width / 2, canvas.height / 2);
 }
 
-function handleStart() {
-    if (gameState === 'start') {
-        gameState = 'playing';
-    } else if (gameState === 'playing') {
-        bird.velocity = bird.lift;
-    }
+function startGame() {
+  gameStarted = true;
+  frameCount = 0;
+  bird.y = 150;
+  bird.velocity = 0;
+  pipes.length = 0;
+  score = 0;
+  loop();
 }
 
-document.addEventListener('keydown', handleStart);
-canvas.addEventListener('touchstart', handleStart);
-window.addEventListener('resize', resizeCanvas);
+function loop() {
+  if (gameStarted) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    updateBird();
+    updatePipes();
+    drawBird();
+    drawPipes();
+    drawScore();
+    frameCount++;
+    requestAnimationFrame(loop);
+  }
+}
 
-resizeCanvas();
-gameLoop();
+document.addEventListener('keydown', () => {
+  if (!gameStarted) {
+    startGame();
+  } else {
+    bird.velocity = bird.lift;
+  }
+});
+
+document.addEventListener('click', () => {
+  if (!gameStarted) {
+    startGame();
+  } else {
+    bird.velocity = bird.lift;
+  }
+});
+
+showStartScreen();
