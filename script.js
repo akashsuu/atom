@@ -16,7 +16,7 @@ const bird = {
 
 const pipes = [];
 const pipeWidth = 40;
-const pipeGap = 180; // Increase gap between pipes
+const pipeGap = 120; // Increase gap between pipes
 let frameCount = 0;
 let score = 0;
 let gameStarted = false;
