@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nothing</title>
-<style>
-  .container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  #video {
-    display: none; /* Hide video element */
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>akashsuu ka game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #70c5ce;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h1>ntg</h1>
-  <video id="video" autoplay></video>
-  <canvas id="canvas" style="display:none;"></canvas>
-</div>
-
+    <canvas id="gameCanvas" width="320" height="480"></canvas>
+    <script src="script.js"></script>
 </body>
 </html>
