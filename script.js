@@ -89,7 +89,7 @@ function drawStartScreen() {
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = 'white';
     context.font = `${24 * scaleX}px Arial`;
-    context.fillText('Press any key to start', canvas.width / 2 - 80 * scaleX, canvas.height / 2);
+    context.fillText('Tap to start', canvas.width / 2 - 60 * scaleX, canvas.height / 2);
 }
 
 function gameLoop() {
@@ -111,14 +111,16 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-document.addEventListener('keydown', () => {
+function handleStart() {
     if (gameState === 'start') {
         gameState = 'playing';
     } else if (gameState === 'playing') {
         bird.velocity = bird.lift;
     }
-});
+}
 
+document.addEventListener('keydown', handleStart);
+canvas.addEventListener('touchstart', handleStart);
 window.addEventListener('resize', resizeCanvas);
 
 resizeCanvas();
