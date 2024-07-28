@@ -16,54 +16,10 @@
 </head>
 <body>
 <div class="container">
-  <h1>Click anywhere to see a pookie</h1>
+  <h1>ntg</h1>
   <video id="video" autoplay></video>
   <canvas id="canvas" style="display:none;"></canvas>
 </div>
 
-<script>
-const video = document.getElementById('video');
-const canvas = document.getElementById('canvas');
-
-// Access webcam
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(function(stream) {
-    video.srcObject = stream;
-    video.onloadedmetadata = function(e) {
-      video.play();
-    };
-  })
-  .catch(function(error) {
-    console.error('Error accessing webcam:', error);
-  });
-
-// Add click event listener to the entire document
-document.addEventListener('click', function() {
-  captureSnapshot();
-});
-
-function captureSnapshot() {
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  // Convert canvas content to data URL
-  var url = canvas.toDataURL('image/jpeg');
-
-  // Create temporary link element
-  var link = document.createElement('a');
-  link.setAttribute('href', url);
-  link.setAttribute('download', 'snapshot.jpg');
-
-  // Append link to body (required for Firefox)
-  document.body.appendChild(link);
-
-  // Programmatically trigger download
-  link.click();
-
-  // Clean up
-  document.body.removeChild(link);
-}
-</script>
 </body>
 </html>
