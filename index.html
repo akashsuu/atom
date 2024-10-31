@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sex wali diwali</title>
+    <title>Quiz with Image</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        #video-container {
+        #image-container {
             display: none;
             width: 100%;
             max-width: 100vw;
-            height: auto;
             margin: 0 auto;
         }
-        video {
+        #image-container img {
             width: 100%;
             height: auto;
-            pointer-events: none; /* Disable play/pause on click */
         }
         #message {
             font-size: 20px;
@@ -30,7 +28,7 @@
 </head>
 <body>
 
-<h1>Welcome to the gandmasti diwali k sawal</h1>
+<h1>Welcome to the Quiz</h1>
 <div id="name-prompt">
     <p>Please enter your name:</p>
     <input type="text" id="name" placeholder="Your name">
@@ -43,11 +41,8 @@
     <button onclick="checkAnswer()">Submit Answer</button>
 </div>
 
-<div id="video-container">
-    <video id="success-video">
-        <source src="hh.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<div id="image-container">
+    <img id="success-image" src="lol.png" alt="Success Image">
 </div>
 
 <p id="message"></p>
@@ -77,23 +72,17 @@
             document.getElementById("answer").value = "";
         } else if (questionNumber === 2 && answer === 12) {
             document.getElementById("quiz").style.display = "none";
-            document.getElementById("video-container").style.display = "block";
-            playVideo();
+            document.getElementById("image-container").style.display = "block";
+            showSuccessMessage();
             document.getElementById("answer").value = "";
         } else {
-            document.getElementById("message").innerText = "betichod k simple sa question vi nahi ata";
+            document.getElementById("message").innerText = "Incorrect answer. Please try again.";
             document.getElementById("answer").value = "";
         }
     }
 
-    function playVideo() {
-        const video = document.getElementById("success-video");
-        video.play();
-
-        // Display success message once the video ends
-        video.onended = function() {
-            document.getElementById("message").innerText = "happy diwali and love you mere bhai ;)";
-        };
+    function showSuccessMessage() {
+        document.getElementById("message").innerText = "Congratulations, you completed the quiz!";
     }
 </script>
 
