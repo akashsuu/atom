@@ -3,88 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz with Image</title>
+    <title>Quiz Management System</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
             text-align: center;
-            margin-top: 50px;
+            box-sizing: border-box;
+            max-height: 90vh;
+            overflow-y: auto;
         }
-        #image-container {
+        .menu button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            transition: 0.3s;
+            width: 90%;
+            max-width: 300px;
+        }
+        .menu button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 90%;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #add-question-section, #delete-question-section, #display-questions-section, #quiz-section, #result-section {
             display: none;
-            width: 100%;
-            max-width: 100vw;
-            margin: 0 auto;
         }
-        #image-container img {
-            width: 100%;
-            height: auto;
+        .quiz-options input {
+            margin: 5px 10px 20px 0;
         }
-        #message {
-            font-size: 20px;
-            margin-top: 20px;
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .menu button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            input[type="text"] {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Quiz Management System</h1>
+        <div class="menu">
+            <button onclick="toggleSection('add-question-section')">Add a Question</button>
+            <button onclick="toggleSection('delete-question-section')">Delete a Question</button>
+            <button onclick="toggleSection('display-questions-section')">Display Questions</button>
+            <button onclick="toggleSection('quiz-section')">Start Quiz</button>
+            <button onclick="toggleSection('result-section')">Display Result</button>
+        </div>
 
-<h1>Welcome to the gandmasti diwali k sawal</h1>
-<div id="name-prompt">
-    <p>Please enter your name:</p>
-    <input type="text" id="name" placeholder="Your name">
-    <button onclick="askFirstQuestion()">Submit</button>
-</div>
+        <div id="add-question-section">
+            <h2>Add a Question</h2>
+            <input type="text" id="new-question" placeholder="Enter question">
+            <input type="text" id="option1" placeholder="Option 1">
+            <input type="text" id="option2" placeholder="Option 2">
+            <input type="text" id="option3" placeholder="Option 3">
+            <input type="text" id="option4" placeholder="Option 4">
+            <input type="text" id="new-answer" placeholder="Correct option (1-4)">
+            <button onclick="addQuestion()">Add</button>
+        </div>
 
-<div id="quiz" style="display: none;">
-    <p id="question"></p>
-    <input type="number" id="answer" placeholder="Your answer">
-    <button onclick="checkAnswer()">Submit Answer</button>
-</div>
+        <div id="delete-question-section">
+            <h2>Delete a Question</h2>
+            <input type="text" id="delete-question" placeholder="Enter question to delete">
+            <button onclick="deleteQuestion()">Delete</button>
+        </div>
 
-<div id="image-container">
-    <img id="success-image" src="lol.png" alt="Success Image">
-</div>
+        <div id="display-questions-section">
+            <h2>Questions and Answers</h2>
+            <div id="questions-list"></div>
+        </div>
 
-<p id="message"></p>
+        <div id="quiz-section">
+            <h2>Quiz</h2>
+            <div id="quiz"></div>
+            <div id="option-content" style="margin-top: 20px; font-weight: bold;"></div>
+            <button onclick="submitQuiz()">Submit</button>
+        </div>
 
-<script>
-    let userName;
-    let questionNumber = 0;
+        <div id="result-section">
+            <h2>Result</h2>
+            <p id="result"></p>
+        </div>
+    </div>
 
-    function askFirstQuestion() {
-        userName = document.getElementById("name").value;
-        if (userName.trim() === "") {
-            alert("Please enter your name.");
-            return;
+    <script>
+        let quizDB = {};
+        let userScore = 0;
+
+        function toggleSection(sectionId) {
+            const sections = ['add-question-section', 'delete-question-section', 'display-questions-section', 'quiz-section', 'result-section'];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+
+            if (sectionId === 'display-questions-section') {
+                displayQuestions();
+            }
         }
-        document.getElementById("name-prompt").style.display = "none";
-        document.getElementById("quiz").style.display = "block";
-        questionNumber = 1;
-        document.getElementById("question").innerText = `${userName}, what is 3 + 3?`;
-    }
 
-    function checkAnswer() {
-        const answer = parseInt(document.getElementById("answer").value);
-        
-        if (questionNumber === 1 && answer === 6) {
-            questionNumber = 2;
-            document.getElementById("question").innerText = `${userName}, what is 5 + 7?`;
-            document.getElementById("answer").value = "";
-        } else if (questionNumber === 2 && answer === 12) {
-            document.getElementById("quiz").style.display = "none";
-            document.getElementById("image-container").style.display = "block";
-            showSuccessMessage();
-            document.getElementById("answer").value = "";
-        } else {
-            document.getElementById("message").innerText = "betichod k simple sa question nahi ata";
-            document.getElementById("answer").value = "";
+        function addQuestion() {
+            const question = document.getElementById('new-question').value;
+            const option1 = document.getElementById('option1').value;
+            const option2 = document.getElementById('option2').value;
+            const option3 = document.getElementById('option3').value;
+            const option4 = document.getElementById('option4').value;
+            const answer = document.getElementById('new-answer').value;
+            if (question && option1 && option2 && option3 && option4 && answer) {
+                quizDB[question] = {
+                    options: [option1, option2, option3, option4],
+                    answer: answer
+                };
+                alert('Question added successfully!');
+                document.querySelectorAll('#add-question-section input[type="text"]').forEach(input => input.value = '');
+            }
         }
-    }
 
-    function showSuccessMessage() {
-        document.getElementById("message").innerText = "diwali khatam ho gyi fir vi yr dil se love you ;)";
-    }
-</script>
-
+        function displayQuestions() {
+            const questionsList = document.getElementById('questions-list');
+            questionsList.innerHTML = '';
+            for (let question in quizDB) {
+                const item = `<p><strong>${question}</strong> - Options: ${quizDB[question].options.join(', ')} - Answer: ${quizDB[question].answer}</p>`;
+                questionsList.innerHTML += item;
+            }
+        }
+    </script>
 </body>
 </html>
