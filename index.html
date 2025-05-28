@@ -1,162 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Management System</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f3f4f6;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 700px;
-            width: 100%;
-            text-align: center;
-            box-sizing: border-box;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .menu button {
-            margin: 10px;
-            padding: 15px 25px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            transition: 0.3s;
-            width: 90%;
-            max-width: 300px;
-        }
-        .menu button:hover {
-            background-color: #45a049;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 90%;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        #add-question-section, #delete-question-section, #display-questions-section, #quiz-section, #result-section {
-            display: none;
-        }
-        .quiz-options input {
-            margin: 5px 10px 20px 0;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            .menu button {
-                font-size: 14px;
-                padding: 10px 20px;
-            }
-            input[type="text"] {
-                font-size: 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Code Snake Game</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    canvas {
+      background-color: #222;
+      border: 2px solid #555;
+    }
+    #syntax-box {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #00ff00;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Quiz Management System</h1>
-        <div class="menu">
-            <button onclick="toggleSection('add-question-section')">Add a Question</button>
-            <button onclick="toggleSection('delete-question-section')">Delete a Question</button>
-            <button onclick="toggleSection('display-questions-section')">Display Questions</button>
-            <button onclick="toggleSection('quiz-section')">Start Quiz</button>
-            <button onclick="toggleSection('result-section')">Display Result</button>
-        </div>
+  <h1>Code Snake: Syntax Eater</h1>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <div id="syntax-box">Target Syntax: <span id="syntax">def</span></div>
 
-        <div id="add-question-section">
-            <h2>Add a Question</h2>
-            <input type="text" id="new-question" placeholder="Enter question">
-            <input type="text" id="option1" placeholder="Option 1">
-            <input type="text" id="option2" placeholder="Option 2">
-            <input type="text" id="option3" placeholder="Option 3">
-            <input type="text" id="option4" placeholder="Option 4">
-            <input type="text" id="new-answer" placeholder="Correct option (1-4)">
-            <button onclick="addQuestion()">Add</button>
-        </div>
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const box = 20;
+    let snake = [{x: 9 * box, y: 10 * box}];
+    let direction = "RIGHT";
+    let syntaxOrder = ["def", "(", ")", ":", "return"];
+    let currentSyntaxIndex = 0;
+    let food = generateFood();
 
-        <div id="delete-question-section">
-            <h2>Delete a Question</h2>
-            <input type="text" id="delete-question" placeholder="Enter question to delete">
-            <button onclick="deleteQuestion()">Delete</button>
-        </div>
+    document.addEventListener("keydown", directionControl);
 
-        <div id="display-questions-section">
-            <h2>Questions and Answers</h2>
-            <div id="questions-list"></div>
-        </div>
+    function directionControl(event) {
+      if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+      else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+      else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+      else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+    }
 
-        <div id="quiz-section">
-            <h2>Quiz</h2>
-            <div id="quiz"></div>
-            <div id="option-content" style="margin-top: 20px; font-weight: bold;"></div>
-            <button onclick="submitQuiz()">Submit</button>
-        </div>
+    function generateFood() {
+      return {
+        x: Math.floor(Math.random() * 19) * box,
+        y: Math.floor(Math.random() * 19) * box,
+        value: syntaxOrder[Math.floor(Math.random() * syntaxOrder.length)]
+      };
+    }
 
-        <div id="result-section">
-            <h2>Result</h2>
-            <p id="result"></p>
-        </div>
-    </div>
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = i === 0 ? "lime" : "green";
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+      }
 
-    <script>
-        let quizDB = {};
-        let userScore = 0;
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(food.x, food.y, box, box);
+      ctx.fillStyle = "black";
+      ctx.font = "16px monospace";
+      ctx.fillText(food.value, food.x + 2, food.y + 16);
 
-        function toggleSection(sectionId) {
-            const sections = ['add-question-section', 'delete-question-section', 'display-questions-section', 'quiz-section', 'result-section'];
-            sections.forEach(id => {
-                document.getElementById(id).style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
+      let headX = snake[0].x;
+      let headY = snake[0].y;
 
-            if (sectionId === 'display-questions-section') {
-                displayQuestions();
-            }
-        }
+      if (direction === "LEFT") headX -= box;
+      else if (direction === "UP") headY -= box;
+      else if (direction === "RIGHT") headX += box;
+      else if (direction === "DOWN") headY += box;
 
-        function addQuestion() {
-            const question = document.getElementById('new-question').value;
-            const option1 = document.getElementById('option1').value;
-            const option2 = document.getElementById('option2').value;
-            const option3 = document.getElementById('option3').value;
-            const option4 = document.getElementById('option4').value;
-            const answer = document.getElementById('new-answer').value;
-            if (question && option1 && option2 && option3 && option4 && answer) {
-                quizDB[question] = {
-                    options: [option1, option2, option3, option4],
-                    answer: answer
-                };
-                alert('Question added successfully!');
-                document.querySelectorAll('#add-question-section input[type="text"]').forEach(input => input.value = '');
-            }
-        }
+      let newHead = {x: headX, y: headY};
 
-        function displayQuestions() {
-            const questionsList = document.getElementById('questions-list');
-            questionsList.innerHTML = '';
-            for (let question in quizDB) {
-                const item = `<p><strong>${question}</strong> - Options: ${quizDB[question].options.join(', ')} - Answer: ${quizDB[question].answer}</p>`;
-                questionsList.innerHTML += item;
-            }
-        }
-    </script>
+      if (
+        headX === food.x && headY === food.y &&
+        food.value === syntaxOrder[currentSyntaxIndex]
+      ) {
+        currentSyntaxIndex++;
+        document.getElementById("syntax").textContent = syntaxOrder[currentSyntaxIndex] || "🎉 Completed!";
+        food = generateFood();
+      } else {
+        snake.pop();
+      }
+
+      if (
+        headX < 0 || headY < 0 ||
+        headX >= canvas.width || headY >= canvas.height ||
+        snake.some(seg => seg.x === headX && seg.y === headY)
+      ) {
+        clearInterval(game);
+        alert("Game Over! Reload to try again.");
+      }
+
+      snake.unshift(newHead);
+    }
+
+    const game = setInterval(draw, 200);
+  </script>
 </body>
 </html>
