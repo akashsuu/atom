@@ -54,7 +54,7 @@
       return {
         x: Math.floor(Math.random() * 19) * box,
         y: Math.floor(Math.random() * 19) * box,
-        value: syntaxOrder[Math.floor(Math.random() * syntaxOrder.length)]
+        value: syntaxOrder[currentSyntaxIndex] // Always show the correct next syntax
       };
     }
 
@@ -81,13 +81,16 @@
 
       let newHead = {x: headX, y: headY};
 
-      if (
-        headX === food.x && headY === food.y &&
-        food.value === syntaxOrder[currentSyntaxIndex]
-      ) {
+      if (headX === food.x && headY === food.y) {
         currentSyntaxIndex++;
-        document.getElementById("syntax").textContent = syntaxOrder[currentSyntaxIndex] || "🎉 Completed!";
-        food = generateFood();
+        if (currentSyntaxIndex < syntaxOrder.length) {
+          document.getElementById("syntax").textContent = syntaxOrder[currentSyntaxIndex];
+          food = generateFood();
+        } else {
+          document.getElementById("syntax").textContent = "🎉 Completed!";
+          clearInterval(game);
+          alert("Congratulations! You ate all the syntax in order!");
+        }
       } else {
         snake.pop();
       }
