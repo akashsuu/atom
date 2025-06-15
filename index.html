@@ -10,6 +10,7 @@
       padding: 0;
       font-family: 'Exo', sans-serif;
       height: 100%;
+      width: 100%;
     }
 
     /* Page 1: Background and Centered Text */
@@ -19,7 +20,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      height: 100vh;
     }
 
     @keyframes bg-scroll {
@@ -28,24 +29,22 @@
 
     .infinity-text {
       font-size: 8rem;
-      font-weight: 900; /* Thicker */
+      font-weight: 900;
       color: #999;
       cursor: pointer;
       text-align: center;
     }
 
-    /* Page 2: Full Page Video */
-    #video-page {
+    /* Page 2: Full Page GIF */
+    #gif-page {
       display: none;
       background: black;
       height: 100vh;
       width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
-    #video-page video {
+    #gif-page img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -54,23 +53,20 @@
 </head>
 <body>
 
-  <!-- First Page -->
+  <!-- Page 1 -->
   <div id="landing">
-    <div class="infinity-text" onclick="openVideoPage()">click here</div>
+    <div class="infinity-text" onclick="openGifPage()">CLICK HERE</div>
   </div>
 
-  <!-- Second Page -->
-  <div id="video-page">
-    <video id="fullscreenVideo" autoplay controls>
-      <source src="your-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <!-- Page 2: Full Page GIF -->
+  <div id="gif-page">
+    <img src="your-gif.gif" alt="Looping GIF">
   </div>
 
   <script>
-    function openVideoPage() {
+    function openGifPage() {
       document.getElementById("landing").style.display = "none";
-      document.getElementById("video-page").style.display = "flex";
+      document.getElementById("gif-page").style.display = "block";
     }
   </script>
 
