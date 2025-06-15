@@ -34,12 +34,13 @@
       text-align: center;
     }
 
-    /* Page 2: Fullscreen Video */
+    /* Page 2: Full Page Video */
     #video-page {
       display: none;
       background: black;
       height: 100vh;
       width: 100vw;
+      display: flex;
       justify-content: center;
       align-items: center;
     }
@@ -58,7 +59,7 @@
     <div class="infinity-text" onclick="openVideoPage()">INFINITY</div>
   </div>
 
-  <!-- Second Page (Hidden at first) -->
+  <!-- Second Page (Hidden initially) -->
   <div id="video-page">
     <video id="fullscreenVideo" autoplay controls>
       <source src="your-video.mp4" type="video/mp4">
@@ -68,22 +69,8 @@
 
   <script>
     function openVideoPage() {
-      // Hide landing and show video page
       document.getElementById("landing").style.display = "none";
-      const videoPage = document.getElementById("video-page");
-      videoPage.style.display = "flex";
-
-      // Attempt to enter full screen
-      const video = document.getElementById("fullscreenVideo");
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) {
-        video.msRequestFullscreen();
-      }
-
-      video.play();
+      document.getElementById("video-page").style.display = "flex";
     }
   </script>
 
