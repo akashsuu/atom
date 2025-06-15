@@ -2,112 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Code Snake Game</title>
+  <title>Infinity Scroll</title>
+  <link href="https://fonts.googleapis.com/css?family=Exo:100" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
-      color: #eee;
-      font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      margin-top: 13.5rem;
+      color: #999;
+      font: 400 16px/1.5 'Exo', ubuntu, "segoe ui", helvetica, arial, sans-serif;
+      text-align: center;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+
+      animation: bg-scrolling-reverse 0.92s infinite linear;
     }
-    canvas {
-      background-color: #222;
-      border: 2px solid #555;
+
+    @keyframes bg-scrolling-reverse {
+      100% { background-position: 50px 50px; }
     }
-    #syntax-box {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #00ff00;
+
+    .infinity-text {
+      font-size: 8rem;
+      font-weight: 100;
+      cursor: pointer;
+    }
+
+    #video-container {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    video {
+      width: 60%;
+      max-width: 720px;
     }
   </style>
 </head>
 <body>
-  <h1>Code Snake: Syntax Eater</h1>
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
-  <div id="syntax-box">Target Syntax: <span id="syntax">def</span></div>
+
+  <div class="infinity-text" onclick="playVideo()">INFINITY</div>
+
+  <div id="video-container">
+    <video id="myVideo" controls>
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <script>
-    const canvas = document.getElementById("gameCanvas");
-    const ctx = canvas.getContext("2d");
-    const box = 20;
-    let snake = [{x: 9 * box, y: 10 * box}];
-    let direction = "RIGHT";
-    let syntaxOrder = ["def", "(", ")", ":", "return"];
-    let currentSyntaxIndex = 0;
-    let food = generateFood();
-
-    document.addEventListener("keydown", directionControl);
-
-    function directionControl(event) {
-      if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-      else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-      else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-      else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+    function playVideo() {
+      const video = document.getElementById("myVideo");
+      const container = document.getElementById("video-container");
+      container.style.display = "block";
+      video.play();
     }
-
-    function generateFood() {
-      return {
-        x: Math.floor(Math.random() * 19) * box,
-        y: Math.floor(Math.random() * 19) * box,
-        value: syntaxOrder[currentSyntaxIndex] // Always show the correct next syntax
-      };
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = i === 0 ? "lime" : "green";
-        ctx.fillRect(snake[i].x, snake[i].y, box, box);
-      }
-
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(food.x, food.y, box, box);
-      ctx.fillStyle = "black";
-      ctx.font = "16px monospace";
-      ctx.fillText(food.value, food.x + 2, food.y + 16);
-
-      let headX = snake[0].x;
-      let headY = snake[0].y;
-
-      if (direction === "LEFT") headX -= box;
-      else if (direction === "UP") headY -= box;
-      else if (direction === "RIGHT") headX += box;
-      else if (direction === "DOWN") headY += box;
-
-      let newHead = {x: headX, y: headY};
-
-      if (headX === food.x && headY === food.y) {
-        currentSyntaxIndex++;
-        if (currentSyntaxIndex < syntaxOrder.length) {
-          document.getElementById("syntax").textContent = syntaxOrder[currentSyntaxIndex];
-          food = generateFood();
-        } else {
-          document.getElementById("syntax").textContent = "🎉 Completed!";
-          clearInterval(game);
-          alert("Congratulations! You ate all the syntax in order!");
-        }
-      } else {
-        snake.pop();
-      }
-
-      if (
-        headX < 0 || headY < 0 ||
-        headX >= canvas.width || headY >= canvas.height ||
-        snake.some(seg => seg.x === headX && seg.y === headY)
-      ) {
-        clearInterval(game);
-        alert("Game Over! Reload to try again.");
-      }
-
-      snake.unshift(newHead);
-    }
-
-    const game = setInterval(draw, 200);
   </script>
+
 </body>
 </html>
