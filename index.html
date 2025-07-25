@@ -1,115 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>UwU</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-      background-color: #000;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding-top: 100px;
     }
 
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
+    #gif {
+      margin-top: 20px;
+      display: none;
+      max-width: 80%;
     }
 
-    .center-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Arial Black', sans-serif;
-      font-size: 8rem;
-      font-weight: 900;
-      color: #ffffff;
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      z-index: 10;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
-  <canvas id="glitchCanvas"></canvas>
-  <div class="center-text" onclick="window.location.href='your-gif-page.html'">UwU</div>
+  <button onclick="playGIF()">UwU</button>
+  <br>
+  <img id="gif" src="" alt="Playing UwU...">
 
   <script>
-    const canvas = document.getElementById('glitchCanvas');
-    const ctx = canvas.getContext('2d');
-
-    const glitchColors = ['#2b4539', '#61dca3', '#61b3dc'];
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+[]{}<>?,.'.split('');
-    const charWidth = 10;
-    const charHeight = 20;
-    const fontSize = 16;
-    let columns, rows;
-    let letterGrid = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      columns = Math.floor(canvas.width / charWidth);
-      rows = Math.floor(canvas.height / charHeight);
-      letterGrid = Array(columns * rows).fill().map(() => ({
-        char: randomChar(),
-        color: randomColor()
-      }));
+    function playGIF() {
+      const gif = document.getElementById('gif');
+      // Replace with your own gif URL if needed
+      gif.src = "gif.gif"; 
+      gif.style.display = "block";
     }
-
-    function randomChar() {
-      return letters[Math.floor(Math.random() * letters.length)];
-    }
-
-    function randomColor() {
-      return glitchColors[Math.floor(Math.random() * glitchColors.length)];
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = `${fontSize}px monospace`;
-      ctx.textBaseline = 'top';
-
-      for (let i = 0; i < letterGrid.length; i++) {
-        const x = (i % columns) * charWidth;
-        const y = Math.floor(i / columns) * charHeight;
-        const letter = letterGrid[i];
-
-        ctx.fillStyle = letter.color;
-        ctx.fillText(letter.char, x, y);
-      }
-    }
-
-    function glitch() {
-      const count = Math.floor(letterGrid.length * 0.05);
-      for (let i = 0; i < count; i++) {
-        const index = Math.floor(Math.random() * letterGrid.length);
-        letterGrid[index] = {
-          char: randomChar(),
-          color: randomColor()
-        };
-      }
-    }
-
-    function animate() {
-      glitch();
-      draw();
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-    });
-
-    resizeCanvas();
-    animate();
   </script>
 
 </body>
