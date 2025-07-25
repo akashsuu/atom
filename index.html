@@ -43,17 +43,18 @@
     #gif-container {
       display: none;
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      background: black;
       z-index: 9999;
+      background-color: black;
     }
 
     #gif {
-      width: 100vw;
-      height: 100vh;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fills the screen, cropping if needed */
     }
   </style>
 </head>
@@ -71,10 +72,10 @@
     function playGIF() {
       const gifContainer = document.getElementById('gif-container');
       const gif = document.getElementById('gif');
-      gif.src = "https://media.giphy.com/media/l0HlFQ8vQf4RMu5Ys/giphy.gif"; // Replace with your GIF URL
+      gif.src = "https://media.giphy.com/media/l0HlFQ8vQf4RMu5Ys/giphy.gif"; // Replace with your GIF
       gifContainer.style.display = "block";
 
-      // Make fullscreen
+      // Request fullscreen mode
       if (gifContainer.requestFullscreen) {
         gifContainer.requestFullscreen();
       } else if (gifContainer.webkitRequestFullscreen) {
