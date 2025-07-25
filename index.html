@@ -10,30 +10,33 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      background-color: #000;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
     }
 
     .container {
       text-align: center;
+      z-index: 1;
     }
 
     button {
       padding: 30px 60px;
       font-size: 32px;
-      background-color: #007bff;
+      background-color: rgba(0, 123, 255, 0.8);
       color: white;
       border: none;
       border-radius: 20px;
       cursor: pointer;
       transition: 0.3s ease;
+      backdrop-filter: blur(4px);
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: rgba(0, 86, 179, 0.9);
       transform: scale(1.05);
     }
 
@@ -68,10 +71,10 @@
     function playGIF() {
       const gifContainer = document.getElementById('gif-container');
       const gif = document.getElementById('gif');
-      gif.src = "https://media.giphy.com/media/l0HlFQ8vQf4RMu5Ys/giphy.gif"; // Replace with your GIF
+      gif.src = "https://media.giphy.com/media/l0HlFQ8vQf4RMu5Ys/giphy.gif"; // Replace with your GIF URL
       gifContainer.style.display = "block";
 
-      // Make fullscreen if supported
+      // Make fullscreen
       if (gifContainer.requestFullscreen) {
         gifContainer.requestFullscreen();
       } else if (gifContainer.webkitRequestFullscreen) {
