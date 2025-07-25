@@ -3,47 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <title>UwU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      text-align: center;
-      padding-top: 100px;
     }
 
-    #gif {
-      margin-top: 20px;
-      display: none;
-      max-width: 80%;
+    .container {
+      text-align: center;
     }
 
     button {
-      padding: 12px 25px;
-      font-size: 18px;
+      padding: 15px 30px;
+      font-size: 20px;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: 0.3s ease;
     }
 
     button:hover {
       background-color: #0056b3;
     }
+
+    #gif-container {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 9999;
+    }
+
+    #gif {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
 
-  <button onclick="playGIF()">UwU</button>
-  <br>
-  <img id="gif" src="" alt="Playing UwU...">
+  <div class="container">
+    <button onclick="playGIF()">UwU</button>
+  </div>
+
+  <div id="gif-container">
+    <img id="gif" src="" alt="GIF">
+  </div>
 
   <script>
     function playGIF() {
+      const gifContainer = document.getElementById('gif-container');
       const gif = document.getElementById('gif');
-      // Replace with your own gif URL if needed
-      gif.src = "gif.gif"; 
-      gif.style.display = "block";
+      gif.src = "gif.gif"; // Replace with your GIF
+      gifContainer.style.display = "block";
+
+      // Try to make fullscreen if supported
+      if (gifContainer.requestFullscreen) {
+        gifContainer.requestFullscreen();
+      } else if (gifContainer.webkitRequestFullscreen) {
+        gifContainer.webkitRequestFullscreen();
+      } else if (gifContainer.msRequestFullscreen) {
+        gifContainer.msRequestFullscreen();
+      }
     }
   </script>
 
