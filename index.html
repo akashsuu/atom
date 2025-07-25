@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UwU</title>
+  <title>Fullscreen GIF Player</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      width: 100%;
       background-color: #000;
       display: flex;
       justify-content: center;
@@ -21,18 +22,19 @@
     }
 
     button {
-      padding: 15px 30px;
-      font-size: 20px;
+      padding: 30px 60px;
+      font-size: 32px;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 20px;
       cursor: pointer;
       transition: 0.3s ease;
     }
 
     button:hover {
       background-color: #0056b3;
+      transform: scale(1.05);
     }
 
     #gif-container {
@@ -55,7 +57,7 @@
 <body>
 
   <div class="container">
-    <button onclick="playGIF()">UwU</button>
+    <button onclick="playGIF()">▶ Play GIF</button>
   </div>
 
   <div id="gif-container">
@@ -66,10 +68,10 @@
     function playGIF() {
       const gifContainer = document.getElementById('gif-container');
       const gif = document.getElementById('gif');
-      gif.src = "gif.gif"; // Replace with your GIF
+      gif.src = "https://media.giphy.com/media/l0HlFQ8vQf4RMu5Ys/giphy.gif"; // Replace with your GIF
       gifContainer.style.display = "block";
 
-      // Try to make fullscreen if supported
+      // Make fullscreen if supported
       if (gifContainer.requestFullscreen) {
         gifContainer.requestFullscreen();
       } else if (gifContainer.webkitRequestFullscreen) {
